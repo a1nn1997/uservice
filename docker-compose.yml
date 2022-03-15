@@ -1,0 +1,16 @@
+version: '3.9'
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: app:2.0
+    ports:
+      - "80:5051"
+    restart: always
+    networks:
+      - webnet
+
+networks:
+  webnet:
